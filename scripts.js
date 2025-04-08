@@ -8,7 +8,21 @@ document.addEventListener('DOMContentLoaded', function(){
     botaoAumentarFonte.addEventListener('click', function(){
         tamanhoDaFonte = tamanhoDaFonte + 0.1
         document.body.style.fontSize = `${tamanhoDaFonte}rem`
+
     })
 
+    const botaoDiminuir = document.getElementById('diminuir-fonte')
+
+        botaoDiminuir.addEventListener('click', function(){
+            tamanhoFonte = tamanhoFonte - 0.1;
+            document.body.style.fontSize = tamanhoFonte+"rem";
+        })
+
+      const botaoAcessibilidade = document.grtElementByid('botao-acessibilidade')
+      const opcoesAcessibilidade = document.grtElementByid('opcoes-acessibilidade')
+botaoAcessibilidade.addEventListener('click', function(){
+    botaoAcessibilidade.classlist.toggle('rotacao-botao')
+    opcoesAcessibilidade.classlist.toggle('apresenta-lista')
+})
 
 })
