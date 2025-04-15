@@ -13,16 +13,26 @@ document.addEventListener('DOMContentLoaded', function(){
 
     const botaoDiminuir = document.getElementById('diminuir-fonte')
 
-        botaoDiminuir.addEventListener('click', function(){
-            tamanhoFonte = tamanhoFonte - 0.1;
-            document.body.style.fontSize = tamanhoFonte+"rem";
-        })
+    botaoDiminuir.addEventListener('click', function(){
+        tamanhoDaFonte = tamanhoDaFonte - 0.1;
+        document.body.style.fontSize = tamanhoDaFonte+"rem";
+    })
 
-      const botaoAcessibilidade = document.grtElementByid('botao-acessibilidade')
-      const opcoesAcessibilidade = document.grtElementByid('opcoes-acessibilidade')
-botaoAcessibilidade.addEventListener('click', function(){
-    botaoAcessibilidade.classlist.toggle('rotacao-botao')
-    opcoesAcessibilidade.classlist.toggle('apresenta-lista')
-})
+    const botaoAcessibilidade = document.getElementById('botao-acessibilidade')
+    const opcoesAcessibilidade = document.getElementById('opcoes-acessibilidade')
+
+    botaoAcessibilidade.addEventListener('click', function(){
+        botaoAcessibilidade.classList.toggle('rotacao-botao')
+        opcoesAcessibilidade.classList.toggle('apresenta-lista')
+
+    const botaoSelecionado = botaoAcessibilidade.getAttribute('aria-expanded') === 'true';
+        botaoAcessibilidade.setAttribute('aria-expanded', !botaoSelecionado)
+
+    })
+
+    const alternaContraste = document.getElementById('alterna-contraste')
+    alternaContraste.addEventListener('click', function(){
+        document.body.classList.toggle('alto-contraste')
+    })
 
 })
